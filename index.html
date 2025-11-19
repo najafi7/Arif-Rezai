@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
+    <style>
+        /* Small styles for form alerts used by EmailJS script */
+        .form-alert{padding:12px;border-radius:6px;margin-bottom:16px;display:none}
+        .form-alert.success{background:#e6ffed;color:#056c33;border:1px solid #b7f0c8}
+        .form-alert.error{background:#ffe6e6;color:#8b0000;border:1px solid #f3bdbd}
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -73,22 +79,25 @@
             <!-- about wrapper -->
             <div class="about">
                 <div class="about-img-holder">
-                    <img src="assets/imgs/man.png" class="about-img"
+                    <img src="assets/imgs/arif.png" class="about-img"
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                 </div>
                 <div class="about-caption">
                     <p class="section-subtitle">Who Am I ?</p>
                     <h2 class="section-title mb-3">About Me</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae aliquid ad provident aut
-                        fuga animi soluta quae eos non cupiditate voluptates dolorem, doloremque quos dicta quibusdam
-                        impedit iure nemo a iste
-                        <br>culpa! Quasi quibusdam hic recusandae delectus velit officiis explicabo voluptatibus! Nemo
-                        esse similique, voluptates labore distinctio, placeat explicabo facilis molestias, blanditiis
-                        culpa iusto voluptatem ratione eligendi a, quia temporibus velit vero ipsa sint ex voluptatum
-                        expedita aliquid! Debitis, nam!
+                        My name is Arif Rezai. I am a professional graphic designer with over 3 years of experience in
+                        creating visually appealing designs for various clients. I specialize in logo design, branding,
+                        UI/UX design, packaging and print media. I am passionate about my work and always strive to deliver high-quality
+                        <br>With a strong attention to detail and a keen eye for aesthetics, I am dedicated to helping businesses establish 
+                        a strong visual identity and effectively communicate their message through design.
+                        <br> Whether you need a new logo, a complete branding package, or a website design, I am here to help bring your vision to life.
+
                     </p>
-                    <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button>
+                    <a href="assets\files\cv.png" download="Arif_Rezai_CV">
+                        <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button>
+                    </a>
+                    
                 </div>
             </div><!-- end of about wrapper -->
         </div><!-- end of container -->
@@ -267,20 +276,20 @@
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
             <!-- contact form -->
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+            <div id="form-alert" class="form-alert" role="alert" aria-live="polite"></div>
+            <form id="contact-form" class="contact-form col-md-10 col-lg-8 m-auto" novalidate>
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
+                        <input id="user_name" name="user_name" type="text" size="50" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email" requried>
+                        <input id="user_email" name="user_email" type="email" class="form-control" placeholder="Enter Email" required>
                     </div>
                     <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6" class="form-control"
-                            placeholder="Write Something"></textarea>
+                        <textarea name="message" id="message" rows="6" class="form-control" placeholder="Write Something" required></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+                        <button id="contact-submit" type="submit" class="btn btn-outline-primary rounded">Send Message</button>
                     </div>
                 </div>
             </form><!-- end of contact form -->
@@ -308,6 +317,10 @@
 
     <!-- bootstrap 3 affix -->
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- EmailJS SDK and integration script (replace placeholders in assets/js/emailjs.js) -->
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script src="assets/js/emailjs.js"></script>
 
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
