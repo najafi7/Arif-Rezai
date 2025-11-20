@@ -1,17 +1,3 @@
-/*
- EmailJS integration for the contact form in `index.html`.
-
- Setup (replace placeholders below):
- - Create an EmailJS account at https://www.emailjs.com/
- - Add an email service (e.g., Gmail, SMTP) and note its Service ID (e.g. 'service_xxx')
- - Create an email template and note its Template ID (e.g. 'template_xxx').
-   The template should use variables: `user_name`, `user_email`, `message`, and optionally `to_email`.
- - Obtain your Public Key from EmailJS (Dashboard > Integration) and replace `YOUR_PUBLIC_KEY`.
-
- Replace the placeholders `YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`, and `YOUR_PUBLIC_KEY` below.
- The code will send an email to `to_email` (we set `ariflomo3430@gmail.com` by default in params),
- but your EmailJS template controls the final email content and recipients.
-*/
 
 document.addEventListener('DOMContentLoaded', function () {
   // Initialize EmailJS (replace with your public key)
